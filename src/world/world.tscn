@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bcwvpt8uxm7gq"]
+
+[ext_resource type="PackedScene" uid="uid://u7srgwfww6pn" path="res://entities/player/player.tscn" id="1_6xmxd"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_tcf2h"]
+[ext_resource type="Script" uid="uid://qd86do8v0xtj" path="res://ui/hud/aim_joystick.gd" id="3_aim"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6xmxd"]
+
+[node name="World" type="Node2D" unique_id=1341802707]
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1020803492]
+layer = -10
+
+[node name="Placeholder" type="ColorRect" parent="Background" unique_id=324346496]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28235295, 0.34901962, 0.24313726, 1)
+metadata/_edit_lock_ = true
+
+[node name="Rubble" type="Node2D" parent="." unique_id=1403158942]
+
+[node name="PlaceholderObject" type="Sprite2D" parent="Rubble" unique_id=1424540883]
+position = Vector2(232.375, 223.5)
+rotation = 0.29115692
+scale = Vector2(21.250004, 21.000027)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="PlaceholderObject2" type="Sprite2D" parent="Rubble" unique_id=1267680665]
+position = Vector2(809, 184.00002)
+rotation = 0.29115692
+scale = Vector2(21.250004, 21.000027)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="PlaceholderObject3" type="Sprite2D" parent="Rubble" unique_id=1256549171]
+position = Vector2(252.625, 402)
+rotation = 0.1853325
+scale = Vector2(21.250004, 21.000027)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="PlaceholderObject4" type="Sprite2D" parent="Rubble" unique_id=1972841966]
+position = Vector2(774.90076, 441.82123)
+rotation = 0.18533252
+scale = Vector2(37.574986, 30.529102)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="PlaceholderObject5" type="Sprite2D" parent="Rubble" unique_id=579280326]
+position = Vector2(360.06134, 53.32457)
+rotation = -0.5517155
+scale = Vector2(22.44588, 21.000025)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="PlaceholderObject6" type="Sprite2D" parent="Rubble" unique_id=397152543]
+position = Vector2(936.68634, 13.824585)
+rotation = -0.5517155
+scale = Vector2(22.44588, 21.000025)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="PlaceholderObject7" type="Sprite2D" parent="Rubble" unique_id=424137908]
+position = Vector2(380.31134, 231.82458)
+rotation = -0.65753996
+scale = Vector2(22.44588, 21.000027)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="PlaceholderObject8" type="Sprite2D" parent="Rubble" unique_id=1282390994]
+position = Vector2(902.5871, 271.6458)
+rotation = -0.65753996
+scale = Vector2(39.68958, 30.5291)
+texture = SubResource("PlaceholderTexture2D_6xmxd")
+
+[node name="Player" parent="." unique_id=2113096987 instance=ExtResource("1_6xmxd")]
+position = Vector2(469, 292)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1685164482]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=229793035]
+layer = 10
+
+[node name="Virtual joystick left" parent="HUD" unique_id=1915524259 instance=ExtResource("2_tcf2h")]
+visibility_mode = 1
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"
+
+[node name="Virtual joystick right" parent="HUD" unique_id=1110870166 instance=ExtResource("2_tcf2h")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+script = ExtResource("3_aim")
+player_id = 0
+joystick_mode = 1
+visibility_mode = 1
+action_left = "aim_left"
+action_right = "aim_right"
+action_up = "aim_up"
+action_down = "aim_down"
