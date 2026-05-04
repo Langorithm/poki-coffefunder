@@ -1,0 +1,7 @@
+{
+  "userIgnoreFilters": [
+    "src/"
+  ],
+  "alwaysUpdateLinks": true,
+  "promptDelete": false
+}

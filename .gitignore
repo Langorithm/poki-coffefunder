@@ -1,0 +1,20 @@
+# Obsidian — workspace state is local, everything else versioned
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/
+.obsidian/themes/
+
+# Godot
+src/.godot/
+src/export_presets.cfg
+
+# Obsidian plugins (uninstalled)
+.makemd/
+.space/
+
+# Build output
+builds/
+
+# OS
+.DS_Store
+Thumbs.db
