@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://qbhh8tc1k08l" path="res://entities/player/player.gd" id="1_sglur"]
 [ext_resource type="Texture2D" uid="uid://5ykswkov6loe" path="res://icon.png" id="2_bls4j"]
 [ext_resource type="Script" uid="uid://4mo14dvou4rc" path="res://entities/player/input/local_player_input.gd" id="3_fkugw"]
+[ext_resource type="Script" path="res://systems/health_component.gd" id="4_health"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5o24"]
 radius = 16.124516
 
 [node name="Player" type="CharacterBody2D" unique_id=2113096987]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_sglur")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1422511872]
@@ -20,5 +23,9 @@ unique_name_in_owner = true
 script = ExtResource("3_fkugw")
 metadata/_custom_type_script = "uid://4mo14dvou4rc"
 
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1487931121]
 shape = SubResource("CircleShape2D_h5o24")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1847392011]
+script = ExtResource("4_health")

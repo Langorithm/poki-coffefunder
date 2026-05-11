@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://pkogkhi7bm8v"]
+
+[ext_resource type="Script" uid="uid://cgee6csphciot" path="res://ui/hud/shooting_hud.gd" id="1_shud"]
+
+[node name="ShootingHUD" type="Node2D" unique_id=1197754304]
+script = ExtResource("1_shud")
+
+[node name="AimPivot" type="Node2D" parent="." unique_id=939640641]
+
+[node name="AimLine" type="Line2D" parent="AimPivot" unique_id=1409014615]
+position = Vector2(30, 0)
+points = PackedVector2Array(0, 0, 40, 0)
+width = 2.0
+default_color = Color(1, 1, 1, 0.6)
+
+[node name="AmmoPips" type="HBoxContainer" parent="." unique_id=1608180562]
+offset_left = -36.0
+offset_top = 34.0
+offset_right = 36.0
+offset_bottom = 42.0
+theme_override_constants/separation = 8
+
+[node name="Pip1" type="ColorRect" parent="AmmoPips" unique_id=689403268]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Pip2" type="ColorRect" parent="AmmoPips" unique_id=1013770415]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Pip3" type="ColorRect" parent="AmmoPips" unique_id=1471379072]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Pip4" type="ColorRect" parent="AmmoPips" unique_id=1119911679]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+
+[node name="Pip5" type="ColorRect" parent="AmmoPips" unique_id=1684308678]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2

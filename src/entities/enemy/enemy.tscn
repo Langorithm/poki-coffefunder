@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dhp1xecackdnq"]
+
+[ext_resource type="Script" uid="uid://lhuewwvjfbaw" path="res://entities/enemy/enemy.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://dafq43g0j1hc0" path="res://systems/health_component.gd" id="2_health"]
+[ext_resource type="Texture2D" uid="uid://5ykswkov6loe" path="res://icon.png" id="3_icon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=701059379]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_script")
+speed = 210.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=815720443]
+modulate = Color(1, 0.3, 0.3, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076215679]
+shape = SubResource("CircleShape2D_1")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=1662390349]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=1149575034]
+shape = SubResource("CircleShape2D_1")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1964752782]
+script = ExtResource("2_health")
+max_hp = 1
